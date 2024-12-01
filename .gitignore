@@ -1,0 +1,7 @@
+*.mp3
+
+data/offline_files/*
+data/online_files/*
+output/*
+
+**/__pycache__/**

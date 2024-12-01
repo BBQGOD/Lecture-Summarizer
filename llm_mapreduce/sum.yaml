@@ -1,0 +1,23 @@
+llm: 
+  name_or_path: gpt-4o-mini
+gen_args:
+  model: gpt-4o-mini
+  max_tokens: 1500
+api-key: 
+url: https://api.openai.com/v1
+max_work_count: 4
+
+# map_prompt: "You are provided with a portion of an article and a question. Read the article portion and follow my instructions to process it.\n\nArticle:\nThe article begins as follows:\n{context}\nThe article concludes here.\n\nQuestion:\n{question}\n\nInstructions:\n\nPlease extract and summarize information from the provided passage to try and answer the given question. Note that you only have a part of the entire text, so the information you obtain might not fully answer the question. \n\n1. Summarize the Information: Identify the key pieces of information from the passage that are relevant to the given question and provide a concise summary.\n\nPlease follow this format:\n\nSummary:"
+
+# collapse_prompt: "You need to process a task with a long context that greatly exceeds your context limit. The only feasible way to handle this is by processing the long context chunk by chunk. You are provided with a question and summaries extracted from each chunk. Read the summaries and follow my instructions to process it.\n\nSummaries:\nThe summaries begin as follows:\n{context}\nThe summaries conclude here.\n\nQuestion:\n{question}\n\nInstruction:\n\nIntegrate and summarize the provided summaries to answer the question:\n\n1. Integrate and Summarize Information: Collect all the summaries and provide a concise, integrated summary that is relevant to solving the question.\n\nPlease follow this format:\n\nSummary:"
+
+# reduce_prompt: "You need to process a task with a long context that greatly exceeds your context limit. The only feasible way to handle this is by processing the long context chunk by chunk. You are provided with a question and summaries extracted from each chunk. Read the summaries and follow my instructions to process it.\n\nSummaries:\nThe summaries begin as follows:\n{context}\nThe summaries conclude here.\n\nQuestion:\n{question}\n\nInstruction:\n\nIntegrate and summarize the provided summaries to answer the question. Collect all the summaries and provide a concise, integrated summary that is relevant to solving the question. Provide as detailed a summary as possible; it should be a long string of text without being divided into points."
+
+map_prompt: "你将被提供一篇文章的部分内容和一个问题。请阅读文章内容，并按照指令进行处理。\n\n文章：\n文章内容开始：\n{context}\n文章内容结束。\n\n问题：\n{question}\n\n指令：\n\n请从提供的段落中提取并总结信息，以尝试回答所给问题。注意，你只有一部分的文章内容，因此你获得的信息可能无法完全回答问题。\n\n1. 总结信息：识别段落中与所给问题相关的关键信息，并提供简明的总结。\n\n请按照以下格式：\n\n总结："
+
+collapse_prompt: "你需要处理一个任务，其上下文长度远远超过你的上下文限制。唯一可行的方法是逐块处理长文本内容。你将获得一个问题以及从每一块文本中提取的摘要。请阅读摘要并按照指令进行处理。\n\n摘要：\n摘要内容如下：\n{context}\n摘要内容结束。\n\n问题：\n{question}\n\n指令：\n\n整合并总结提供的摘要以回答问题：\n\n1. 整合并总结信息：收集所有摘要，并提供一个简明的、与解决问题相关的整合总结。\n\n请按照以下格式：\n\n总结："
+
+reduce_prompt: "你需要处理一个任务，其上下文长度远远超过你的上下文限制。唯一可行的方法是逐块处理长文本内容。你将获得一个问题以及从每一块文本中提取的摘要。请阅读摘要并按照指令进行处理。\n\n摘要：\n摘要内容如下：\n{context}\n摘要在此结束。\n\n问题：\n{question}\n\n指令：\n\n整合并总结提供的摘要以回答问题。收集所有摘要并提供一个简明的整合总结，与解决问题相关。请尽可能详细地总结；应为一段连续的文字，不要分点描述。"
+
+
+zh_chunk: true
